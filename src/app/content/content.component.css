@@ -1,0 +1,120 @@
+.main-content{
+    width: 95vw;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    width: 85%;
+    margin-top: 24px;
+}
+.head h2{
+    color: #404258;
+}
+.head .btn{
+    float: right;
+}
+.head img{
+    margin-right: 8px;
+}
+.about-informatics{
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    justify-content: space-between;
+    margin: 24px 0;
+    padding: 20px 0;
+    /* height: 65vh; */
+    align-items: center;
+}
+.about-informatics .about{
+    width: 65vw;
+    max-width: 65%;
+}
+.about-informatics .about h3{
+    margin: 20px 0;
+    color: #404258;
+}
+.about-informatics .about p{
+    text-align: justify;
+}
+i{
+    font-style: normal;
+    font-size: larger;
+    font-weight: 500;
+    color: #FFA500;
+}
+.about-informatics .informatics{
+    width: 20vw;
+    max-width: 40%;
+    border: 1px solid rgb(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 10px 8px 10px;
+    height: fit-content;
+    border-radius: 30px;
+}
+.about-informatics .informatics a{
+    text-decoration: none;
+}
+
+.about-informatics .informatics div{
+    border: 1px solid rgb(0, 0, 0, 0.25);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    transition: .1s;
+    color: #404258;
+    background-color: white;
+}
+.about-informatics .informatics div:hover{
+    font-size: 17px;
+    background-color: #404258;
+    color: white;
+}
+.foundational-learning-cycle{
+    width: 85%;
+}
+.foundational-learning-cycle h3{
+    width: 100%;
+    text-align: left;
+    margin: 24px 0;
+    color: #404258;
+}
+.foundational-learning-cycle .carousel-inner .active{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0;
+}
+.foundational-learning-cycle .active img{
+    height: 60vh;
+    max-height: 40%;
+    width: 60vh;
+    max-width: 40%;
+}
+.foundational-learning-cycle .active h4{
+    margin: 12px 0;
+    color: #404258;
+}
+.foundational-learning-cycle .active p{
+    text-align: justify;
+}
+.foundational-learning-cycle .active .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0 20px 20px;
+}
