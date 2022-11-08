@@ -7,17 +7,20 @@ import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-s
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { FormsModule } from '@angular/forms';
 import { ContentComponent } from './content/content.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
     {

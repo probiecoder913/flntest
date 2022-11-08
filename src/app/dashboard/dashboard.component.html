@@ -1,0 +1,31 @@
+<div class="content">
+    <form #loginform="ngForm" (ngSubmit)="trySignIn(loginform)" *ngIf="!user">
+        <div class="head">
+            <p>Sign in with:</p>
+            <asl-google-signin-button type="standard" size="large"></asl-google-signin-button>
+        </div>
+        <div class="text-center">
+            <p>or</p>
+        </div>
+        <div class="credentials">
+            <div class="mail mb-4">
+                <label for="login-email" class="form-label">Email</label>
+                <input type="email" placeholder="email or username" 
+                class="form-control" ngModel required #loginEmail="ngModel" name="login-email">
+            </div>
+            <div class="password mb-4">
+                <label for="login-password" class="form-label">Password</label>
+                <input type="password" placeholder="password" 
+                class="form-control" ngModel required #loginPassword="ngModel" name="password">
+            </div>
+            <button [disabled]="loginform.status=='INVALID'" 
+            class="btn btn-block mb-4 btn-primary">Login</button>
+        </div>
+        <div class="text-center">
+            <p>Not a member? <a href="#!">Register</a></p>
+          </div>
+    </form>
+    <div class="dashboard-data" *ngIf="user">
+        
+    </div>
+</div>

@@ -60,7 +60,7 @@ i{
     justify-content: space-between;
     padding: 18px 10px 8px 10px;
     height: fit-content;
-    border-radius: 30px;
+    border-radius: 8px;
 }
 .about-informatics .informatics a{
     text-decoration: none;
@@ -70,17 +70,16 @@ i{
     border: 1px solid rgb(0, 0, 0, 0.25);
     padding: 8px;
     margin-bottom: 10px;
-    border-radius: 30px;
+    border-radius: 5px;
     text-align: center;
     cursor: pointer;
     font-size: 16px;
     font-weight: 400;
-    transition: .1s;
+    transition: .2s;
     color: #404258;
     background-color: white;
 }
 .about-informatics .informatics div:hover{
-    font-size: 17px;
     background-color: #404258;
     color: white;
 }
