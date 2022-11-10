@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialAuthService, GoogleLoginProvider, SocialUser} from "@abacritt/angularx-social-login";
-import { EmailValidator } from '@angular/forms';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,15 +9,27 @@ import { EmailValidator } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private authService: SocialAuthService) { }
+  constructor(
+    private authService: SocialAuthService,
+    private DashboardService: DashboardService
+    ) { }
 
   ngOnInit(): void {
+    //----------*START* API for testing ANGULAR->NODEJS-----//
+    this.DashboardService.sendLoginInfoAPI().subscribe((response)=>{
+        console.log('response is ', response)
+      },(error) => {
+          console.log('error is ', error)
+    })
+    //----------*END* API for testing ANGULAR->NODEJS-----//
+    // ------------*START* Google Authentication Part-----------//
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
       // console.log(this.user);
       this.signIn(this.user.email);
     });
+    // ------------*END* Google Authentication Part-----------//
   }
 
   //--------For Google Login--------

@@ -8,6 +8,7 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { FormsModule } from '@angular/forms';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     SocialLoginModule,
     FormsModule,
-    
+    HttpClientModule
   ],
   providers: [
     {
