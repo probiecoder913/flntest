@@ -1,0 +1,95 @@
+<div class="content">
+    <!-----------*START* Login Section  -------->
+    <form #loginform="ngForm" class="login-form" (ngSubmit)="trySignIn(loginform)" *ngIf="loginSection">
+        <!-- <div class="head">
+            <p>Sign in with:</p>
+        </div>
+        <div class="text-center">
+            <p>or</p>
+        </div> -->
+        <div class="credentials">
+            <div class="mail mb mb-4">
+                <label for="login-email" class="form-label">Email</label>
+                <div class="input-control">
+                    <input type="email" placeholder="email or username" class="form-control" 
+                    
+                    ngModel required #loginEmail="ngModel" Name="login-email">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <div class="password mb mb-4">
+                <label for="login-password" class="form-label">Password</label>
+                <div class="input-control">
+                    <input type="password" placeholder="password" 
+                    class="form-control" ngModel required #loginPassword="ngModel" name="password">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <button [disabled]="loginform.status=='INVALID'"
+            class="btn btn-block mb-4 btn-primary">Login</button>
+            <!-- " -->
+        </div>
+        <div class="text-center">
+            <p>Not a member? <i (click)="loginSignupToggle()">Register</i></p>
+          </div>
+    </form>
+    <!-----------*END* Login Section  -------->
+    <!-----------*START* Signup Section  ----->
+    <form #signUpForm="ngForm" class="signup-form" (ngSubmit)="SignUp(signUpform)" *ngIf="!loginSection">
+        <!-- <div class="head">
+            <p>SignUp with:</p>
+            <asl-google-signin-button *ngIf="!loggedIn" type="standard" size="large"></asl-google-signin-button>
+        </div>
+        <div class="text-center">
+            <p>or</p>
+        </div> -->
+        <div class="credentials">
+            <div class="firstName mb mb-4">
+                <label for="signup-firstname" class="form-label">First Name</label>
+                <div class="input-control">
+                    <input type="text" placeholder="first name" 
+                    class="form-control" ngModel required #signupFirstName="ngModel" name="signup-firstname">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <div class="lastName mb mb-4">
+                <label for="signup-lastname" class="form-label">Last Name</label>
+                <div class="input-control">
+                    <input type="text" placeholder="last name" 
+                    class="form-control" ngModel required #signupLastName="ngModel" name="signup-lastname">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <div class="mail mb mb-4">
+                <label for="login-email" class="form-label">Email</label>
+                <div class="input-control">
+                    <input type="email" placeholder="email or username" 
+                    class="form-control" ngModel required #loginEmail="ngModel" name="login-email">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <div class="password mb mb-4">
+                <label for="login-password" class="form-label">Password</label>
+                <div class="input-control">
+                    <input type="password" placeholder="password" 
+                    class="form-control" ngModel required #loginPassword="ngModel" name="login-password">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <div class="confirm-password mb mb-4">
+                <label for="login-confirm-password" class="form-label">Confirm Password</label>
+                <div class="input-control">
+                    <input type="password" placeholder="re-enter password" 
+                    class="form-control" ngModel required #loginPassword="ngModel" name="login-confirm-password">
+                    <p class="input-required">This is Required*</p>
+                </div>
+            </div>
+            <button [disabled]="signUpForm.status=='INVALID'"
+            class="btn btn-block mb-4 btn-primary">Sign Up</button>
+            <!-- " -->
+        </div>
+        <div class="text-center">
+            <p>Already a member? <i (click)="loginSignupToggle()">Log In</i></p>
+          </div>
+    </form>
+</div>    

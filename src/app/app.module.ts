@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentComponent,
     DashboardComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
