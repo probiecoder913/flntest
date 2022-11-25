@@ -8,14 +8,13 @@ import { AppService } from './app.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AppService, private router: Router) {}
+  constructor(private AppService: AppService, private router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      
-      if (!this.authService.isLoggedIn()) {
-        this.router.navigate(['/auth']); // go to login if not authenticated
+      if (!this.AppService.loggedIn) {
+        this.router.navigate(['/auth']); // go to auth if not authenticated
         return false;
       }
     return true;

@@ -1,3 +1,82 @@
-<div class="navbar">
-    
+<div class="content">
+    <div class="navbar">
+        <ul>
+            <li>
+                <a [routerLink]="['/']">
+                    <img src="./assets/pngs/home.png">
+                    <p>home</p>
+                </a>   
+            </li>
+            <li>
+                <a [routerLink]="['/mock-test']">
+                    <img src="./assets/pngs/mock-test.png">
+                    <p>mock test</p>
+                </a>                 
+            </li>
+            <li>
+                <a [routerLink]="['/resources']">
+                    <img src="./assets/pngs/resources.png">
+                    <p>resources</p>
+                </a> 
+            </li>
+            <li>
+                <a [routerLink]="['/']">
+                    <img src="./assets/pngs/logout.png">
+                    <p>logout</p>
+                </a> 
+            </li>
+        </ul>
+    </div>   
+    <div class="user">
+        <div class="ribbon">
+            <div class="profile">
+                <img src="./assets/pngs/profile.png" height="35" width="">
+                <p>{{username}}</p>
+            </div>
+        </div> 
+        <div class="user-details">
+            <div class="basic-info">
+                <div class="content-label">
+                    <h1>basic info</h1>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="info">
+                            <div class="info-label">name</div>
+                            <div class="info-value">value</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">father's name</div>
+                            <div class="info-value">value</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">date of birth</div>
+                            <div class="info-value">value</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">Roll number</div>
+                            <div class="info-value">value</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info">
+                            <div class="info-label">school</div>
+                            <div class="info-value">value</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">class</div>
+                            <div class="info-value">value</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">email</div>
+                            <div class="info-value">value</div>
+                        </div>               
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-info">
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+	selector: 'app-content',
+	templateUrl: './content.component.html',
+	styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
+	ngOnInit(): void {
 	this.slideActive();
-  }
+	}
 
-  slideNumber = 0;
-  slideActive(){
+	slideNumber = 0;
+	slideActive(){
 	// console.log(this.slideNumber);
 	setTimeout(()=>{
 		if(this.slideNumber>2){
@@ -23,7 +23,7 @@ export class ContentComponent implements OnInit {
 			this.slideNumber++;}
 		this.slideActive();
 	}, 7000);
-  }
+	}
 
 }
 
