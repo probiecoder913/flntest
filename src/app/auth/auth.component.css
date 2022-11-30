@@ -3,6 +3,7 @@
     width: 100vw;
     max-height: 100%;
     max-width: 100%;
+    overflow: scroll;
 }
 .login-form{
     width: 50vw;
@@ -42,14 +43,12 @@
     width: 50vw;
     height: fit-content;
     padding: 30px;
-    margin: auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     border: 2px solid #EAEAEA;
     border-radius: 10px;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     background: #EAEAEA;
 }
 form i{

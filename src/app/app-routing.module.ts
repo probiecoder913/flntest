@@ -5,11 +5,15 @@ import { AuthGuard } from './auth.guard';
 import { AuthComponent } from './auth/auth.component';
 import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
 	{ path: "", component: ContentComponent, pathMatch: 'full' },
 	{ path: "dashboard", component: DashboardComponent, pathMatch: 'full',
-		// canActivate:[AuthGuard]
+		canActivate:[AuthGuard]
+	},
+	{ path: "mock-test", component: TestComponent, pathMatch: 'full',
+		canActivate:[AuthGuard]
 	},
 	{ path: "auth", component: AuthComponent, pathMatch: 'full' },
 	{ path: "**", redirectTo: "" },

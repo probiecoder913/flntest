@@ -35,7 +35,7 @@ export class AuthComponent implements OnInit {
 		this.AppService.sendLoginInfoAPI(loginFormData.value).subscribe((response)=>{
 				if(response['success']){
 					// user = response['user']
-					this.AppService.user = response['user'];
+					this.AppService.userData = response['user'];
 					this.AppService.loggedIn = true; 
 					this.router.navigate(['/dashboard']);
 				}
@@ -53,8 +53,8 @@ export class AuthComponent implements OnInit {
 		console.log(SignUpFormData.value);
 		this.AppService.sendSignUpInfoAPI(SignUpFormData.value).subscribe((response)=>{
 			if(response['success']){
-				this.AppService.user = response['user'];
-				this.AppService.loggedIn = true;
+				this.AppService.userData = response['data'];
+				this.AppService.loggedIn = true; 
 				this.router.navigate(['/dashboard']);
 			}else if(!response['success']){
 				// user already exists 

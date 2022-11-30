@@ -10,6 +10,8 @@ import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { AuthComponent } from './auth/auth.component';
     ContentComponent,
     DashboardComponent,
     AuthComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleChartsModule
   ],
   providers: [
     {
