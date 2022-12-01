@@ -13,7 +13,7 @@ const routes: Routes = [
 		canActivate:[AuthGuard]
 	},
 	{ path: "mock-test", component: TestComponent, pathMatch: 'full',
-		canActivate:[AuthGuard]
+		// canActivate:[AuthGuard]
 	},
 	{ path: "auth", component: AuthComponent, pathMatch: 'full' },
 	{ path: "**", redirectTo: "" },

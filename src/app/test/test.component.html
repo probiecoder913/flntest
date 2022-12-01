@@ -1,1 +1,20 @@
-<p>test works!</p>
+<div class="content">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand text-bold">
+                <img src="./assets/nipun-bharat-logo.png" height="64" width="80" alt="logo">
+                <span class="text-uppercase">Foundational Literacy and Numeracy
+                    Assessment</span>
+            </a>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="questionBox" *ngFor="let question of literacyQuestions">
+            <h3>{{ question.questionText}}</h3>
+            <div class="optionBox" *ngFor="let option of question.options">
+                <h4 (click)="optionClicked(option,$event,question)">{{ option.text }}</h4>
+            </div>
+        </div>
+        <button type="submit" (click)="submitQuiz()" class="btn btn-primary">Submit</button>
+    </div>
+</div>

@@ -37,7 +37,7 @@ export class AuthComponent implements OnInit {
 					// user = response['user']
 					this.AppService.userData = response['user'];
 					this.AppService.loggedIn = true; 
-					this.router.navigate(['/dashboard']);
+					 this.router.navigate(['/dashboard']);
 				}
 			},(error) => {
 				if(error.status==404){
