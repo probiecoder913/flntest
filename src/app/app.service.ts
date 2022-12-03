@@ -21,10 +21,16 @@ export class AppService {
 		standard: string,
 		email: string,
 		password: string,
-		userid: string
+		userid: string,
+		result: {
+			attempted: number,
+			correct: number,
+			incorrect: number
+		}
 	};
 
 	loggedIn = false;
+	routedTo = '/';
 
   myurl = 'http://localhost:3000';
 
@@ -50,6 +56,12 @@ export class AppService {
 	}
 	// Name, Father's Name, Date Of Birth, Roll Number, School, Class, Email
 	return this.http.post(this.myurl + '/signup',param)
+  }
+
+  submitQuizResponse(data){
+	// console.log(data);
+	const param = data;
+	return this.http.post(this.myurl + '/submitQuizResponse',param)
   }
 
   isLoggedIn() {

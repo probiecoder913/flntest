@@ -67,9 +67,12 @@
                 }
             }
         }
-        button{
+        .buttons{
             position: fixed;
             bottom: 0;
+            button{
+                margin: 0 20px;
+            }
         }
     }
 }

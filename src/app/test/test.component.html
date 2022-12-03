@@ -15,6 +15,9 @@
                 <h4 (click)="optionClicked(option,$event,question)">{{ option.text }}</h4>
             </div>
         </div>
-        <button type="submit" (click)="submitQuiz()" class="btn btn-primary">Submit</button>
+        <div class="buttons">
+            <button class="btn btn-primary" routerLink="['/']">Quit</button>
+            <button type="submit" (click)="submitQuiz()" class="btn btn-primary">Submit</button>
+        </div>
     </div>
 </div>

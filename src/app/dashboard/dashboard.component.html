@@ -1,29 +1,21 @@
 <div class="content">
     <div class="navbar">
         <ul>
-            <li>
-                <a [routerLink]="['/']">
-                    <img src="./assets/pngs/home.png">
-                    <p>home</p>
-                </a>   
+            <li [routerLink]="['/']">
+                <img src="./assets/pngs/home.png">
+                <p>home</p>   
             </li>
-            <li>
-                <a [routerLink]="['/mock-test']">
-                    <img src="./assets/pngs/mock-test.png">
-                    <p>mock test</p>
-                </a>                 
+            <li [routerLink]="['/mock-test']">
+                <img src="./assets/pngs/mock-test.png">
+                <p>mock test</p>                 
             </li>
-            <li>
-                <a [routerLink]="['/resources']">
-                    <img src="./assets/pngs/resources.png">
-                    <p>resources</p>
-                </a> 
+            <li [routerLink]="['/resources']">
+                <img src="./assets/pngs/resources.png">
+                <p>resources</p> 
             </li>
-            <li>
-                <a [routerLink]="['/']">
-                    <img src="./assets/pngs/logout.png">
-                    <p>logout</p>
-                </a> 
+            <li (click)="logout()">
+                <img src="./assets/pngs/logout.png">
+                <p>logout</p> 
             </li>
         </ul>
     </div>   
@@ -43,7 +35,7 @@
                     <div class="column">
                         <div class="info">
                             <div class="info-label">name</div>
-                            <div class="info-value">{{firstname+" "+lastname}}</div>
+                            <div class="info-value info-value-name">{{firstname+" "+lastname}}</div>
                         </div>
                         <div class="info">
                             <div class="info-label">father's name</div>
@@ -69,7 +61,7 @@
                         </div>
                         <div class="info">
                             <div class="info-label">email</div>
-                            <div class="info-value">{{email}}</div>
+                            <div class="info-value info-value-email">{{email}}</div>
                         </div>               
                     </div>
                 </div>
@@ -81,17 +73,25 @@
                 </div>
                 <div class="columns">
                     <google-chart
+                        title="Questions Attempted"
+                        [type]="type"
+                        [data]="attemptedPieChartData"
+                        [columns]="ColumnNames"
+                        [options]="options">
+                    </google-chart> 
+                    <google-chart
                         title="Literacy Assessment"
                         [type]="type"
                         [data]="literacyPieChartData"
-                        [columns]="literacyColumnNames"
+                        [columns]="ColumnNames"
                         [options]="options">
                     </google-chart> 
+                    
                     <google-chart
                         title="Numeracy Assessment"
                         [type]="type"
                         [data]="numeracyPieChartData"
-                        [columns]="numeracyColumnNames"
+                        [columns]="ColumnNames"
                         [options]="options">
                     </google-chart>            
                 </div>  

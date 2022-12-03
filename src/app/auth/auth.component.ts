@@ -37,7 +37,7 @@ export class AuthComponent implements OnInit {
 					// user = response['user']
 					this.AppService.userData = response['user'];
 					this.AppService.loggedIn = true; 
-					 this.router.navigate(['/dashboard']);
+					this.router.navigate(['/']);
 				}
 			},(error) => {
 				if(error.status==404){
@@ -55,7 +55,7 @@ export class AuthComponent implements OnInit {
 			if(response['success']){
 				this.AppService.userData = response['data'];
 				this.AppService.loggedIn = true; 
-				this.router.navigate(['/dashboard']);
+				this.router.navigate(['/']);
 			}else if(!response['success']){
 				// user already exists 
 			}

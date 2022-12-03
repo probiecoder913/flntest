@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-test',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
+  constructor( private Appservice: AppService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -29,12 +31,25 @@ export class TestComponent implements OnInit {
         }
         this.attempted+=1;
         question.attempted = true;
-        console.log(this.attempted, this.correct);
     }
   }
 
   submitQuiz(){
-    
+    let data ={
+        userEmail : this.Appservice.userData.email,
+        result :{
+                attempted : this.attempted,
+                correct : this.correct,
+                incorrect : this.incorrect,
+            }
+    }
+    this.Appservice.submitQuizResponse(data).subscribe((Response)=>{
+        if(Response['success']){
+            this.router.navigate(['/']);
+        }else{
+            setTimeout(this.submitQuiz,2000);
+        }
+    })
   }
   // ==============* QUESTIONS * START ===========================
     literacyQuestions = [{
@@ -174,7 +189,7 @@ export class TestComponent implements OnInit {
                     text: "do they"
                 },
                 {
-                    text: "aren't the"
+                    text: "aren't they"
                 },
                 {
                     text: "did they"
@@ -186,7 +201,7 @@ export class TestComponent implements OnInit {
             "questionText": "Arrange the letters of the word to form a meaningful sentence 'SINTA'",
             options: [{
                     text: "Saint",
-                    correct: true
+                    // correct: true
                 },
                 {
                     text: "Sinat"

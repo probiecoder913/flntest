@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { TestComponent } from './test/test.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TestComponent } from './test/test.component';
     ContentComponent,
     DashboardComponent,
     AuthComponent,
-    TestComponent
+    TestComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
