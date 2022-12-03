@@ -1,6 +1,6 @@
 <div class="content">
     <!-----------*START* Login Section  -------->
-    <form #loginform="ngForm" class="login-form" (ngSubmit)="login(loginform)" *ngIf="!loginSection">
+    <form #loginform="ngForm" class="login-form" (ngSubmit)="login(loginform)" *ngIf="loginSection">
         <!-- <div class="head">
             <p>Sign in with:</p>
         </div>
@@ -35,7 +35,7 @@
     <!---------------------*END* Login Section  ------------------------------>
 
     <!---------------------*START* Signup Section  --------------------------->
-    <form #signUpForm="ngForm" class="signup-form" (ngSubmit)="signUp(signUpForm)" *ngIf="loginSection">
+    <form #signUpForm="ngForm" class="signup-form" (ngSubmit)="signUp(signUpForm)" *ngIf="!loginSection">
         <!-- <div class="head">
             <p>SignUp with:</p>
             <asl-google-signin-button *ngIf="!loggedIn" type="standard" size="large"></asl-google-signin-button>
