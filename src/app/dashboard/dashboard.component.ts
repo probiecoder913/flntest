@@ -17,7 +17,8 @@ export class DashboardComponent implements OnInit {
 	this.getUserResult();
   }
 
-  isLoading:boolean=true;
+  isLoading:boolean;
+  candidateStatus:any = 'status';
 
   userData = this.AppService.userData;
   firstname : string = this.userData.firstname;
@@ -28,23 +29,24 @@ export class DashboardComponent implements OnInit {
   school : string = this.userData.school;
   standard : string = this.userData.standard;
   email : string = this.userData.email;
-  result : any = this.AppService.userResult;
-
-  candidateStatus = ()=>{
-	// return 'passed';
-	if(this.result.correct<5){
-		return 'Failed';
-	}else{
-		return 'Passed';
-	}
-  }
+  result : any;//this.AppService.userResult
 
   getUserResult(){
+	this.isLoading = true;
 	this.AppService.getUserResult().subscribe((response)=>{
 		this.result = response['data'][0].result;
-		// console.log(this.result.attempted);
+		// console.log(this.result);
+		// console.log(this.result.correct);
 	});
-	this.isLoading=false;
+	
+	setTimeout(()=>{
+		if(this.result.correct<5){
+			this.candidateStatus = 'Failed';
+		}else{
+			this.candidateStatus = 'Passed';
+		};
+		this.isLoading = false;
+	},2000);
   }
 
   logout(){
