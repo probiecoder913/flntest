@@ -13,6 +13,8 @@ import { AuthComponent } from './auth/auth.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { TestComponent } from './test/test.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ResourcesComponent } from './resources/resources.component';
     DashboardComponent,
     AuthComponent,
     TestComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    LeftNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { ResourcesComponent } from './resources/resources.component';
     SocialLoginModule,
     FormsModule,
     HttpClientModule,
-    GoogleChartsModule
+    GoogleChartsModule,
   ],
   providers: [
     {

@@ -22,12 +22,12 @@ export class AppService {
 		email: string,
 		password: string,
 		userid: string,
-		result: {
-			attempted: number,
-			correct: number,
-			incorrect: number
-		}
 	};
+	userResult:{
+		attempted: string,
+		correct: string,
+		incorrect: string
+	}
 
 	loggedIn = false;
 	routedTo = '/';
@@ -56,6 +56,13 @@ export class AppService {
 	}
 	// Name, Father's Name, Date Of Birth, Roll Number, School, Class, Email
 	return this.http.post(this.myurl + '/signup',param)
+  }
+
+  getUserResult(){
+	const param = {
+		userEmail : this.userData.email
+	};
+	return this.http.post(this.myurl + '/getUserResult', param) 
   }
 
   submitQuizResponse(data){

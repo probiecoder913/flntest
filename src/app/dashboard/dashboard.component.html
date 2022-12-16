@@ -1,24 +1,5 @@
 <div class="content">
-    <div class="navbar">
-        <ul>
-            <li [routerLink]="['/']">
-                <img src="./assets/pngs/home.png">
-                <p>home</p>   
-            </li>
-            <li [routerLink]="['/mock-test']">
-                <img src="./assets/pngs/mock-test.png">
-                <p>mock test</p>                 
-            </li>
-            <li [routerLink]="['/resources']">
-                <img src="./assets/pngs/resources.png">
-                <p>resources</p> 
-            </li>
-            <li (click)="logout()">
-                <img src="./assets/pngs/logout.png">
-                <p>logout</p> 
-            </li>
-        </ul>
-    </div>   
+    <app-left-navbar></app-left-navbar>
     <div class="user">
         <div class="ribbon">
             <div class="profile">
@@ -66,34 +47,43 @@
                     </div>
                 </div>
             </div>
-
-            <div class="result-info info-card">
+            <div class="result-info info-card" *ngIf="!isLoading">
                 <div class="content-label">
                     <h1>score card</h1>
                 </div>
                 <div class="columns">
                     <google-chart
                         title="Questions Attempted"
-                        [type]="type"
+                        type="PieChart"
                         [data]="attemptedPieChartData"
-                        [columns]="ColumnNames"
-                        [options]="options">
+                        [options]="attemptedOptions">
                     </google-chart> 
                     <google-chart
                         title="Literacy Assessment"
-                        [type]="type"
+                        type="PieChart"
                         [data]="literacyPieChartData"
-                        [columns]="ColumnNames"
-                        [options]="options">
+                        [options]="literacyOptions">
                     </google-chart> 
-                    
                     <google-chart
                         title="Numeracy Assessment"
-                        [type]="type"
+                        type="PieChart"
                         [data]="numeracyPieChartData"
-                        [columns]="ColumnNames"
-                        [options]="options">
+                        [options]="numeracyOptions">
                     </google-chart>            
+                </div>  
+                <h1 class="status"> Status: <i>{{candidateStatus()}}</i></h1>
+            </div>
+            <div class="attempts info-card">
+                <div class="content-label">
+                    <h1>Previous Attempts</h1>
+                </div>
+                <div class="columns">
+                    <google-chart
+                        type="LineChart"
+                        [data]="lineChartData"
+                        [columns]="lineChartColumnNames"
+                        [options]="lineChartOptions">
+                    </google-chart>
                 </div>  
             </div>
         </div>

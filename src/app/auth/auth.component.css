@@ -7,7 +7,7 @@
     background-image: url("https://dsel.education.gov.in/themes/school_education/assets/nipun-bharat/images/nipun-logo.png");
     background-size: 100px;
     background-blend-mode: difference;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .login-form{
