@@ -35,3 +35,14 @@
     height: 1em;
     margin-right: 10px;
 }
+.activeNavRoute{
+    font-weight: 500!important;
+    border-right: 0.3em solid #FFA500!important;
+}
+/* span{
+    width: 0.3em;
+    height: 2em;
+    border-radius: 5px;
+    margin-right: 0;
+    background-color: #FFA500;
+} */

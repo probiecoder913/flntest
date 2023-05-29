@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
@@ -14,6 +14,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 import { TestComponent } from './test/test.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
+import { GuidelinesComponent } from './guidelines/guidelines.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
     AuthComponent,
     TestComponent,
     ResourcesComponent,
-    LeftNavbarComponent
+    LeftNavbarComponent,
+    GuidelinesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
     FormsModule,
     HttpClientModule,
     GoogleChartsModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     {

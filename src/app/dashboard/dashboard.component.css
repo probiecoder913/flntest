@@ -104,6 +104,7 @@
     display: flex;
     width: 100%;
     flex-direction: row;
+    justify-content: center;
 }
 .column{
     display: flex;
@@ -156,4 +157,8 @@
     padding: auto 1em;
     margin: auto;
     color: rgb(220, 57, 18) #f6b09e66 rgb(73, 92, 131) #a9b0cd;
+}
+::ng-deep .mat-progress-spinner circle,
+::ng-deep .mat-progress-spinner path {
+  stroke: rgba(64, 66, 88, 0.406); /* Change this to your desired color */
 }

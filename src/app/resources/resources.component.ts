@@ -11,5 +11,6 @@ export class ResourcesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  videos = 4;
 
 }

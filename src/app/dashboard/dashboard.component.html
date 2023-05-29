@@ -47,11 +47,14 @@
                     </div>
                 </div>
             </div>
-            <div class="result-info info-card" *ngIf="!isLoading">
+            <div class="result-info info-card">
                 <div class="content-label">
                     <h1>score card</h1>
                 </div>
-                <div class="columns">
+                <div class="columns" *ngIf="isLoading">
+                    <mat-spinner mode="indeterminate" diameter="50"></mat-spinner>
+                </div>
+                <div class="columns" *ngIf="!isLoading">
                     <google-chart
                         title="Questions Attempted"
                         type="PieChart"
@@ -77,7 +80,10 @@
                 <div class="content-label">
                     <h1>Previous Attempts</h1>
                 </div>
-                <div class="columns">
+                <div class="columns" *ngIf="isLoading">
+                    <mat-spinner mode="indeterminate" diameter="50"></mat-spinner>
+                </div>
+                <div class="columns" *ngIf="!isLoading">
                     <google-chart
                         type="LineChart"
                         [data]="lineChartData"

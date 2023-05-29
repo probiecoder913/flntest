@@ -1,19 +1,21 @@
 <div class="navbar">
     <ul>
         <li [routerLink]="['/']">
-            <p><img src="./assets/pngs/home.png">home</p>   
+            <img src="./assets/pngs/home.png">home 
         </li>
         <li [routerLink]="['/mock-test']">
-            
-            <p><img src="./assets/pngs/mock-test.png">mock test</p>                 
+            <img src="./assets/pngs/mock-test.png">mock test                
         </li>
-        <li [routerLink]="['/resources']">
-            
-            <p><img src="./assets/pngs/resources.png">resources</p> 
+        <li [routerLink]="['/resources']" 
+            [routerLinkActive]="['activeNavRoute']">
+            <img src="./assets/pngs/resources.png">resources 
+        </li>
+        <li [routerLink]="['/guidelines']" 
+            [routerLinkActive]="['activeNavRoute']">  
+            <img src="./assets/pngs/guidelines.png">guidelines
         </li>
         <li (click)="logout()">
-            
-            <p><img src="./assets/pngs/logout.png">logout</p> 
+            <img src="./assets/pngs/logout.png">logout
         </li>
     </ul>
 </div> 

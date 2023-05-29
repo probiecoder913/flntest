@@ -3,11 +3,11 @@
     width: 100vw;
     max-height: 100%;
     max-width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     background-image: url("https://dsel.education.gov.in/themes/school_education/assets/nipun-bharat/images/nipun-logo.png");
     background-size: 100px;
     background-blend-mode: difference;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .login-form{

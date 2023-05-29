@@ -7,6 +7,7 @@ import { ContentComponent } from './content/content.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { TestComponent } from './test/test.component';
+import { GuidelinesComponent } from './guidelines/guidelines.component';
 
 const routes: Routes = [
 	{ path: "", component: ContentComponent, pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
 		canActivate:[AuthGuard]
 	},
 	{ path: "resources", component: ResourcesComponent, pathMatch: 'full'},
+	{ path: "guidelines", component: GuidelinesComponent, pathMatch: 'full'},
 	{ path: "mock-test", component: TestComponent, pathMatch: 'full',
 		canActivate:[AuthGuard]
 	},

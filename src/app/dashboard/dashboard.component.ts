@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 	this.getUserResult();
   }
 
-  isLoading:boolean;
+  isLoading:boolean=true;
   candidateStatus:any = 'status';
 
   userData = this.AppService.userData;
@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   school : string = this.userData.school;
   standard : string = this.userData.standard;
   email : string = this.userData.email;
-  result : any;//this.AppService.userResult
+  result : any = this.AppService.userResult
 
   getUserResult(){
 	this.isLoading = true;
