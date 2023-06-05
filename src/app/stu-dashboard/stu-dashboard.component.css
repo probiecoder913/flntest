@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* .navbar{
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    width: 230px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    width: 100%;
+    margin: 2em 0;
+    padding: 1em;
+}
+.navbar ul li{
+    width: 100%;
+    padding: 1em;
+    padding-right: 0;
+    margin: 1em;
+    font-size: 1em;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #404258;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar ul li:hover{
+    font-weight: 500;
+}
+.navbar ul li img{
+    width: 1em;
+    height: 1em;
+    margin-right: 10px;
+} */
+.user{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.ribbon{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    /* height: 3em; */
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.07),0 2px 4px rgba(0,0,0,0.05);
+}
+.ribbon .profile{
+    width: fit-content;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    margin-right: 40px;
+    align-items: center;
+}
+.ribbon .profile p{
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.user .info-card{
+    border: 1px solid rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 1em;
+}
+.content-label{
+    margin-bottom: 1.5em;
+}
+.user-details{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.user-details h1{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: rgba(64, 66, 88, 0.6);
+    text-transform: capitalize;
+}
+.columns{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.info .info-label{
+    width: 150px;
+    text-transform: capitalize;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: rgba(64, 66, 88, 0.85);
+}
+.info .info-value{
+    font-size: 1em;
+    font-weight: 400;
+    color:  rgb(70, 70, 70);
+    text-transform: capitalize;
+}
+.info .info-value-email{
+    text-transform: lowercase;
+}
+.result-info google-chart{
+    width: 330px!important;
+}
+.result-info .status {
+    text-align: right;
+    color: #404258;
+    font-size: 1em;
+}
+.result-info .status i{
+    color:  rgb(70, 70, 70);
+}
+
+.result-info .columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.attempts google-chart{
+    width: 100%;
+    height: 100%;
+    padding: auto 1em;
+    margin: auto;
+    color: rgb(220, 57, 18) #f6b09e66 rgb(73, 92, 131) #a9b0cd;
+}
+::ng-deep .mat-progress-spinner circle,
+::ng-deep .mat-progress-spinner path {
+  stroke: rgba(64, 66, 88, 0.406); /* Change this to your desired color */
+}

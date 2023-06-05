@@ -1,0 +1,97 @@
+<div class="content">
+    <app-left-navbar></app-left-navbar>
+    <div class="user">
+        <div class="ribbon">
+            <div class="profile">
+                <img src="./assets/pngs/profile.png" height="35" width="">
+                <p>{{firstname+" "+lastname}}</p>
+            </div>
+        </div> 
+        <div class="user-details">
+            <div class="basic-info info-card">
+                <div class="content-label">
+                    <h1>basic info</h1>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="info">
+                            <div class="info-label">name</div>
+                            <div class="info-value info-value-name">{{firstname+" "+lastname}}</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">father's name</div>
+                            <div class="info-value">{{fathername}}</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">date of birth</div>
+                            <div class="info-value">{{dob}}</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">Roll number</div>
+                            <div class="info-value">{{rollnumber}}</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info">
+                            <div class="info-label">school</div>
+                            <div class="info-value">{{school}}</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">class</div>
+                            <div class="info-value">{{standard}}</div>
+                        </div>
+                        <div class="info">
+                            <div class="info-label">email</div>
+                            <div class="info-value info-value-email">{{email}}</div>
+                        </div>               
+                    </div>
+                </div>
+            </div>
+            <div class="result-info info-card">
+                <div class="content-label">
+                    <h1>score card</h1>
+                </div>
+                <div class="columns" *ngIf="isLoading">
+                    <mat-spinner mode="indeterminate" diameter="50"></mat-spinner>
+                </div>
+                <div class="columns" *ngIf="!isLoading">
+                    <google-chart
+                        title="Questions Attempted"
+                        type="PieChart"
+                        [data]="attemptedPieChartData"
+                        [options]="attemptedOptions">
+                    </google-chart> 
+                    <google-chart
+                        title="Literacy Assessment"
+                        type="PieChart"
+                        [data]="literacyPieChartData"
+                        [options]="literacyOptions">
+                    </google-chart> 
+                    <google-chart
+                        title="Numeracy Assessment"
+                        type="PieChart"
+                        [data]="numeracyPieChartData"
+                        [options]="numeracyOptions">
+                    </google-chart>            
+                </div>  
+                <h1 class="status"> Status: <i>{{candidateStatus}}</i></h1>
+            </div>
+            <div class="attempts info-card">
+                <div class="content-label">
+                    <h1>Previous Attempts</h1>
+                </div>
+                <div class="columns" *ngIf="isLoading">
+                    <mat-spinner mode="indeterminate" diameter="50"></mat-spinner>
+                </div>
+                <div class="columns" *ngIf="!isLoading">
+                    <google-chart
+                        type="LineChart"
+                        [data]="lineChartData"
+                        [columns]="lineChartColumnNames"
+                        [options]="lineChartOptions">
+                    </google-chart>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

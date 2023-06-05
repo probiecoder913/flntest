@@ -21,24 +21,14 @@
 			</p>
 		</div>
 		<div class="informatics">
-			<a [routerLink]="['/dashboard']">
-				<div class="dashboard">
-					Dashboard
+			<a (click)="auth('admin')">
+				<div class="admDashboard">
+					Admin
 				</div>
 			</a>
-			<a [routerLink]="['/mock-test']">
-				<div class="mock-test">
-					Mock Test
-				</div>
-			</a>
-			<a [routerLink]="['/resources']">
-				<div class="resources">
-					Resources
-				</div>
-			</a>
-			<a [routerLink]="['/guidelines']">
-				<div class="guidelines">
-					Guidelines
+			<a (click)="auth('student')">
+				<div class="stuDashboard">
+					Student
 				</div>
 			</a>
 		</div>
@@ -81,5 +71,5 @@
 			  </div>
 			</div>
 		</div>
-	</div>
+	</div> 
 </div>

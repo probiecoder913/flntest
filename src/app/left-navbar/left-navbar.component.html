@@ -1,10 +1,10 @@
 <div class="navbar">
-    <ul>
+    <ul *ngIf="studentRoute">
         <li [routerLink]="['/']">
             <img src="./assets/pngs/home.png">home 
         </li>
         <li [routerLink]="['/mock-test']">
-            <img src="./assets/pngs/mock-test.png">mock test                
+            <img src="./assets/pngs/test.png">mock test                
         </li>
         <li [routerLink]="['/resources']" 
             [routerLinkActive]="['activeNavRoute']">
@@ -13,6 +13,22 @@
         <li [routerLink]="['/guidelines']" 
             [routerLinkActive]="['activeNavRoute']">  
             <img src="./assets/pngs/guidelines.png">guidelines
+        </li>
+        <li (click)="logout()">
+            <img src="./assets/pngs/logout.png">logout
+        </li>
+    </ul>
+    <ul *ngIf="adminRoute">
+        <li [routerLink]="['/']">
+            <img src="./assets/pngs/home.png">home 
+        </li>
+        <li [routerLink]="['/setTest']"
+            [routerLinkActive]="['activeNavRoute']">
+            <img src="./assets/pngs/test.png">set test 
+        </li>
+        <li [routerLink]="['/adminDashboard']"
+            [routerLinkActive]="['activeNavRoute']">  
+            <img src="./assets/pngs/dashboard.png">dashboard 
         </li>
         <li (click)="logout()">
             <img src="./assets/pngs/logout.png">logout

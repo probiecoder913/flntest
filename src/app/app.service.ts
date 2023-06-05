@@ -22,12 +22,14 @@ export class AppService {
 		email: string,
 		password: string,
 		userid: string,
-	};
-	userResult:{
-		attempted: string,
-		correct: string,
-		incorrect: string
-	}
+		userResult:{
+			attempted: number,
+			correct: number,
+			incorrect: number
+		},
+		admin: boolean
+	};	
+	
 
 	loggedIn = false;
 	routedTo = '/';

@@ -12,11 +12,27 @@ export class LeftNavbarComponent implements OnInit {
   constructor(private AppService: AppService, private router: Router) { }
 
   ngOnInit(): void {
+	this.getRoute();
   }
+
+  userType: string = '';
+  studentRoute: boolean;
+  adminRoute: boolean;
 
   logout(){
     this.AppService.loggedIn = false;
     this.router.navigate(['/']);
   }
+
+  getRoute(){
+	if(this.AppService.routedTo =='/stuDashboard'){
+		this.studentRoute = true;
+		this.adminRoute = false;
+	}else{
+		this.adminRoute = true;
+		this.studentRoute = false;
+	}
+  }
+
 
 }

@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 	private router:Router) { }
 
   ngOnInit(): void {
-	this.getUserResult();
+	// this.getUserResult();
   }
 
   isLoading:boolean=true;
@@ -29,15 +29,16 @@ export class DashboardComponent implements OnInit {
   school : string = this.userData.school;
   standard : string = this.userData.standard;
   email : string = this.userData.email;
-  result : any = this.AppService.userResult
+  result :any = this.userData.userResult;
+  admin: boolean = this.userData.admin;
 
   getUserResult(){
-	this.isLoading = true;
-	this.AppService.getUserResult().subscribe((response)=>{
-		this.result = response['data'][0].result;
-		// console.log(this.result);
-		// console.log(this.result.correct);
-	});
+	// this.isLoading = true;
+	// this.AppService.getUserResult().subscribe((response)=>{
+	// 	this.result = response['data'][0].result;
+	// 	console.log(response);
+	// 	// console.log(this.result);
+	// });
 	
 	setTimeout(()=>{
 		if(this.result.correct<5){
@@ -57,15 +58,15 @@ export class DashboardComponent implements OnInit {
     attemptedOptions = {
 		colors: ['#495C83', '#dc3912'], is3D: true
 	};
+
 	attemptedPieChartData = [
-		['Literacy', 8],
-		// ['Literacy', this.result.attempted],
+		['Literacy', 9],
 		['Numeracy', 9],
 	];
-
+	
 	literacyPieChartData = [
-		['Correct', 6],
-		['Wrong', 4],
+		['Correct', 8],
+		['Wrong', 1],
 		// ['Correct', this.result.correct],
 		// ['Wrong', this.result.incorrect],
 	];
@@ -73,7 +74,6 @@ export class DashboardComponent implements OnInit {
 		colors: ['#495C83', '#a9b0cd'], is3D: true
 	};
 
-	
 	numeracyPieChartData = [
 		['Correct', 26.8],
 		['Wrong', 12.8],
@@ -81,13 +81,12 @@ export class DashboardComponent implements OnInit {
 	numeracyOptions = {
 		colors: ['#dc3912', '#f6af9e'], is3D: true
 	}
-
 	lineChartData = [
 		["Jan",  7.0,8.3],
 		["Feb",  6.9,4.7],
 		["Mar",  9.5,6.8],
 		["Apr",  14.5,7.0],
-		["May",  18.2, 20.4],
+		["May",  18.2,20.4],
 		["Jun",  21.5,16.8],
 		["Jul",  25.2,18],
 		["Aug",  26.5,22],
@@ -97,7 +96,7 @@ export class DashboardComponent implements OnInit {
 		["Dec",  9.6,18.4]
 	 ];
 	lineChartColumnNames = ["Month", "Literacy","Numeracy"];
-	lineChartOptions = {   
+	lineChartOptions = {
 		legend: { position: 'right', },
 	 };
 }

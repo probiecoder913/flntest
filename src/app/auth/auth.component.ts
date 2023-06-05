@@ -16,9 +16,11 @@ export class AuthComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.loginSection = true;
+		this.getUser();
 	}
 
 	loginSection: boolean;
+	userType:any;
 	
 	loginSignupToggle(){
 		if(this.loginSection==true){
@@ -34,10 +36,28 @@ export class AuthComponent implements OnInit {
 		//console.log(loginFormData);
 		this.AppService.sendLoginInfoAPI(loginFormData.value).subscribe((response)=>{
 				if(response['success']){
-					// user = response['user']
-					this.AppService.userData = response['user'];
-					this.AppService.loggedIn = true; 
-					this.router.navigate(['/']);
+					// console.log(response['user']);
+					// this.AppService.userData = response['user'];
+					// this.AppService.loggedIn = true; 
+					// this.router.navigate([this.AppService.routedTo]);
+					if(response['user']['admin']){
+						if(this.AppService.routedTo=='/adminDashboard'){
+							this.AppService.userData = response['user'];
+							this.AppService.loggedIn = true;
+							this.router.navigate(['/adminDashboard']);
+						}else{
+							//not a student
+						}
+					}
+					if(!response['user']['admin']){
+						if(this.AppService.routedTo=='/stuDashboard'){
+							this.AppService.userData = response['user'];
+							this.AppService.loggedIn = true;
+							this.router.navigate(['/stuDashboard']);
+						}else{
+							//not an admin
+						}
+					}
 				}
 			},(error) => {
 				if(error.status==404){
@@ -55,7 +75,7 @@ export class AuthComponent implements OnInit {
 			if(response['success']){
 				this.AppService.userData = response['data'];
 				this.AppService.loggedIn = true; 
-				this.router.navigate(['/']);
+				this.router.navigate(['/dashboard']);
 			}else if(!response['success']){
 				// user already exists 
 			}
@@ -65,5 +85,23 @@ export class AuthComponent implements OnInit {
 	}
 
 	title = 'FLN-Test';
+
+	getUser(){
+		if(this.AppService.routedTo=='/stuDashboard'){
+			this.userType = 'Student';
+		}else{
+			this.userType = 'Admin';
+		}
+	}
+
+	userToggle(){
+		if(this.AppService.routedTo=='/stuDashboard'){
+			this.AppService.routedTo ='/adminDashboard';
+			this.userType = 'Admin';
+		}else{
+			this.AppService.routedTo ='/stuDashboard';
+			this.userType = 'Student';
+		}
+	}
 
 }

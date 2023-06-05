@@ -15,6 +15,9 @@ import { TestComponent } from './test/test.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { LeftNavbarComponent } from './left-navbar/left-navbar.component';
 import { GuidelinesComponent } from './guidelines/guidelines.component';
+import { StuDashboardComponent } from './stu-dashboard/stu-dashboard.component';
+import { SetTestComponent } from './set-test/set-test.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { GuidelinesComponent } from './guidelines/guidelines.component';
     TestComponent,
     ResourcesComponent,
     LeftNavbarComponent,
-    GuidelinesComponent
+    GuidelinesComponent,
+    StuDashboardComponent,
+    SetTestComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

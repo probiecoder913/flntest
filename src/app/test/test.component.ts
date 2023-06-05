@@ -201,7 +201,7 @@ export class TestComponent implements OnInit {
             "questionText": "Arrange the letters of the word to form a meaningful sentence 'SINTA'",
             options: [{
                     text: "Saint",
-                    // correct: true
+                    correct: true
                 },
                 {
                     text: "Sinat"

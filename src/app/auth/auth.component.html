@@ -1,4 +1,7 @@
 <div class="content">
+    <div class="home" [routerLink]="['/']">
+        <img src="./assets/pngs/home.png">
+    </div>
     <!-----------*START* Login Section  -------->
     <form #loginform="ngForm" class="login-form" (ngSubmit)="login(loginform)" *ngIf="loginSection">
         <!-- <div class="head">
@@ -7,6 +10,7 @@
         <div class="text-center">
             <p>or</p>
         </div> -->
+        <span>Logging in as <i (click)="userToggle()">{{userType}}</i></span>
         <div class="credentials">
             <div class="mail mb mb-4">
                 <label for="login-email" class="form-label">Email</label>
@@ -129,6 +133,6 @@
         </div>
         <div class="text-center">
             <p>Already a member? <i (click)="loginSignupToggle()">Log In</i></p>
-          </div>
+        </div>
     </form>
 </div>    
